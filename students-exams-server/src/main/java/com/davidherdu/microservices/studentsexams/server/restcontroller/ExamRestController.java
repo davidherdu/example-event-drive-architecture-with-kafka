@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.davidherdu.microservices.studentexam.models.Exam;
 import com.davidherdu.microservices.studentsexams.server.services.StudentExamService;
-import com.davidherdu.microservices.web.models.Exam;
 
 @RestController
 @RequestMapping("webapi/exams")

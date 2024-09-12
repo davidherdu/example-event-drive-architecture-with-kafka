@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import com.davidherdu.microservices.web.dto.ExamDto;
-import com.davidherdu.microservices.web.dto.StudentDto;
+import com.davidherdu.microservices.studentexam.dto.ExamDto;
+import com.davidherdu.microservices.studentexam.dto.StudentDto;
 
 @FeignClient(name="web", path="/webapi/students")
 public interface StudentClient {

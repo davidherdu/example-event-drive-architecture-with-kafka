@@ -10,7 +10,7 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.davidherdu.microservices</groupId>
-	<artifactId>student-exam-server</artifactId>
+	<artifactId>students-exams-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>web</name>
 	<description>web1</description>
@@ -65,12 +65,12 @@
 		</dependency>
 		<dependency>
 			<groupId>com.davidherdu.microservices</groupId>
-			<artifactId>mappers</artifactId>
+			<artifactId>students-exams-mappers</artifactId>
 			<version>1</version>
 		</dependency>
 		<dependency>
-			<groupId>com.davidherdu.microservices.web3</groupId>
-			<artifactId>mappers3</artifactId>
+			<groupId>com.davidherdu.microservices</groupId>
+			<artifactId>distributed-mappers</artifactId>
 			<version>1</version>
 		</dependency>
 	</dependencies>

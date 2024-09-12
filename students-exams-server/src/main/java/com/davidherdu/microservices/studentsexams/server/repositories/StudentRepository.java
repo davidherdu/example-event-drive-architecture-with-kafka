@@ -4,8 +4,9 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.davidherdu.microservices.web.models.Exam;
-import com.davidherdu.microservices.web.models.Student;
+import com.davidherdu.microservices.studentexam.models.Exam;
+import com.davidherdu.microservices.studentexam.models.Student;
+
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;

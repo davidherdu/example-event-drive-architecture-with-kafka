@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 
+import com.davidherdu.microservices.studentexam.dto.ExamDto;
+import com.davidherdu.microservices.studentexam.dto.StudentDto;
 import com.davidherdu.microservices.studentsexams.frontend.forms.ExamForm;
-import com.davidherdu.microservices.web.dto.ExamDto;
-import com.davidherdu.microservices.web.dto.StudentDto;
 
 @Controller
 public class StudentController {

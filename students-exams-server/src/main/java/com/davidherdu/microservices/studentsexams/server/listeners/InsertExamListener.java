@@ -5,8 +5,8 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
 
+import com.davidherdu.microservices.distributed.dtos.ExamDto;
 import com.davidherdu.microservices.studentsexams.server.events.InsertExamEvent;
-import com.davidherdu.microservices.web3.dtos.ExamDto;
 
 @Component
 public class InsertExamListener implements ApplicationListener<InsertExamEvent> {

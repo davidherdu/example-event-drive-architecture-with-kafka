@@ -3,9 +3,9 @@ package com.davidherdu.microservices.teacherexams.application.listeners;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
+import com.davidherdu.microservices.distributed.dtos.ExamDto;
+import com.davidherdu.microservices.distributed.mappers.ExamMapper;
 import com.davidherdu.microservices.teacherexams.application.services.ExamService;
-import com.davidherdu.microservices.web3.dtos.ExamDto;
-import com.davidherdu.microservices.web3.mappers.ExamMapper;
 
 @Component
 public class ExamListener {

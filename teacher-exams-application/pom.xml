@@ -10,7 +10,7 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.davidherdu.microservices</groupId>
-	<artifactId>web3</artifactId>
+	<artifactId>teacher-exams-application</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>teacher-exams-application</name>
 	<description>web3teacher</description>
@@ -68,8 +68,8 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.davidherdu.microservices.web3</groupId>
-			<artifactId>mappers3</artifactId>
+			<groupId>com.davidherdu.microservices</groupId>
+			<artifactId>distributed-mappers</artifactId>
 			<version>1</version>
 		</dependency>
 	</dependencies>

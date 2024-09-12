@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.davidherdu.microservices.distributed.dtos.ExamDto;
+import com.davidherdu.microservices.distributed.mappers.ExamMapper;
+import com.davidherdu.microservices.distributed.models.Exam;
 import com.davidherdu.microservices.teacherexams.application.services.ExamService;
-import com.davidherdu.microservices.web3.dtos.ExamDto;
-import com.davidherdu.microservices.web3.mappers.ExamMapper;
-import com.davidherdu.microservices.web3.models.Exam;
 
 @RestController
 @RequestMapping("/webapi/exams")

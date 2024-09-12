@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.davidherdu.microservices.studentexam.dto.ExamDto;
+import com.davidherdu.microservices.studentexam.dto.StudentDto;
+import com.davidherdu.microservices.studentexam.mappers.ExamMapper;
+import com.davidherdu.microservices.studentexam.mappers.StudentMapper;
+import com.davidherdu.microservices.studentexam.models.Exam;
+import com.davidherdu.microservices.studentexam.models.Student;
 import com.davidherdu.microservices.studentsexams.server.services.StudentExamService;
-import com.davidherdu.microservices.web.dto.ExamDto;
-import com.davidherdu.microservices.web.dto.StudentDto;
-import com.davidherdu.microservices.web.mappers.ExamMapper;
-import com.davidherdu.microservices.web.mappers.StudentMapper;
-import com.davidherdu.microservices.web.models.Exam;
-import com.davidherdu.microservices.web.models.Student;
 
 @RestController
 @RequestMapping("webapi/students")

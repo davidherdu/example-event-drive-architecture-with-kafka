@@ -10,7 +10,7 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.davidherdu.microservices</groupId>
-	<artifactId>web1client</artifactId>
+	<artifactId>students-exams-frontend</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>students-exams-frontend</name>
 	<description>web client 1</description>
@@ -56,7 +56,7 @@
 		</dependency>
 		<dependency>
 			<groupId>com.davidherdu.microservices</groupId>
-			<artifactId>dtos</artifactId>
+			<artifactId>students-exams-dtos</artifactId>
 			<version>1</version>
 		</dependency>
 	</dependencies>

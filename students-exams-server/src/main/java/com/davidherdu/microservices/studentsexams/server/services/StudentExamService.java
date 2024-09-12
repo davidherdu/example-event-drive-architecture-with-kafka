@@ -9,12 +9,12 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import com.davidherdu.microservices.distributed.dtos.ExamDto;
+import com.davidherdu.microservices.studentexam.models.Exam;
+import com.davidherdu.microservices.studentexam.models.Student;
 import com.davidherdu.microservices.studentsexams.server.events.InsertExamEvent;
 import com.davidherdu.microservices.studentsexams.server.repositories.ExamRepository;
 import com.davidherdu.microservices.studentsexams.server.repositories.StudentRepository;
-import com.davidherdu.microservices.web.models.Exam;
-import com.davidherdu.microservices.web.models.Student;
-import com.davidherdu.microservices.web3.dtos.ExamDto;
 
 @Service
 public class StudentExamService {

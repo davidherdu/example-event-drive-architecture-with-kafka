@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.davidherdu.microservices.distributed.models.Exam;
 import com.davidherdu.microservices.teacherexams.application.forms.ExamForm;
 import com.davidherdu.microservices.teacherexams.application.services.ExamService;
-import com.davidherdu.microservices.web3.models.Exam;
 
 @Controller
 public class ExamController {

@@ -4,8 +4,8 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.davidherdu.microservices.distributed.models.Exam;
 import com.davidherdu.microservices.teacherexams.application.repositories.ExamRepository;
-import com.davidherdu.microservices.web3.models.Exam;
 
 @Service
 public class ExamService {

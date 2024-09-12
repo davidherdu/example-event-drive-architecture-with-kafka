@@ -15,7 +15,7 @@ import org.springframework.kafka.core.ProducerFactory;
 import org.springframework.kafka.support.serializer.JsonSerializer;
 import org.springframework.web.client.RestTemplate;
 
-import com.davidherdu.microservices.web3.dtos.ExamDto;
+import com.davidherdu.microservices.distributed.dtos.ExamDto;
 
 @SpringBootApplication
 public class StudentsExamsServerApplication {

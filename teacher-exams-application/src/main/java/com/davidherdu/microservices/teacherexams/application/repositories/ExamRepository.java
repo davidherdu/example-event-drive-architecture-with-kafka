@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.davidherdu.microservices.web3.models.Exam;
+import com.davidherdu.microservices.distributed.models.Exam;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
