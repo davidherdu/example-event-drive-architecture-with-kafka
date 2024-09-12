@@ -1,0 +1,16 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+
+<table>
+	<tr th:each="exam : ${examslist}">
+		<td th:text="${exam.id}"></td>
+		<td th:text="${exam.text}"></td>
+		<td th:text="${exam.subject}"></td>
+		<!-- <td><a th:href="@{seeexams(name = ${student.name})}">
+			see	exams</a>
+		</td> -->
+	</tr>
+</table>
+
+<a th:href="@{/examform(name=${name})}">new</a>
+</html>

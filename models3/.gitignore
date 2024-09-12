@@ -1,0 +1,75 @@
+# Java class files
+*.class
+
+# Log files
+*.log
+
+# Compiled binary files
+*.jar
+*.war
+*.ear
+
+# Java dependency directories
+/.m2/
+*.iml
+
+# Eclipse specific files
+.classpath
+.project
+.settings/
+
+# IntelliJ IDEA specific files
+.idea/
+*.iml
+*.iws
+out/
+
+# NetBeans specific files
+nbproject/private/
+build/
+nbbuild/
+dist/
+.nb-gradle/
+
+# Gradle specific files
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Maven specific files
+target/
+
+# MacOS specific files
+.DS_Store
+
+# Windows specific files
+Thumbs.db
+ehthumbs.db
+
+# User-specific files
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+
+# IntelliJ IDEA workspace files
+*.idea/
+*.iml
+*.iws
+
+# VS Code specific files
+.vscode/
+
+# SonarQube specific files
+.sonar/
+
+# JRebel specific files
+.jrebel/
+
+# Build directories
+build/

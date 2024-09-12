@@ -1,0 +1,14 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+
+<table>
+	<tr th:each="exam : ${examslist}">
+		<td th:text="${exam.id}"></td>
+		<td th:text="${exam.text}"></td>
+		<td th:text="${exam.subject}"></td>
+		<td th:text="${exam.mark}"></td>
+		<td><a th:href="@{/examform(id=${exam.id})}">Set mark</a></td>
+	</tr>
+</table>
+
+</html>
