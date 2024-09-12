@@ -5,11 +5,11 @@
 	<tr th:each="student : ${studentslist}">
 		<td th:text="${student.name}"></td>
 		<td th:text="${student.age}"></td>
-		<td><a th:href="@{examform(name = ${student.name})}">
-			Add exam</a>
+		<td><a th:href="@{examslist(name = ${student.name})}">
+			View exams</a>
 		</td>
 	</tr>
 </table>
 
-<a href="/studentform">new</a>
+<a href="/studentform">New student</a>
 </html>

@@ -1,7 +1,8 @@
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org">
 <body>
 	<form method="post" action="insertexam">
-		Name:<input type="text" name="name" th:value="${name}" readonly/> <br />
+		<input type="hidden" th:value="${name}" name="name"/> <br /> 
 		Subject:<input type="text" name="subject" /> <br />
 		Text:<input type="text" name="text" /> <br /> 
 		<input type="submit" value="accept" />

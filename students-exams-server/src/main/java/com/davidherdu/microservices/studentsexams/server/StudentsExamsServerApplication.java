@@ -7,6 +7,7 @@ import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.kafka.core.DefaultKafkaProducerFactory;
@@ -18,6 +19,7 @@ import org.springframework.web.client.RestTemplate;
 import com.davidherdu.microservices.distributed.dtos.ExamDto;
 
 @SpringBootApplication
+@EntityScan(basePackages = "com.davidherdu.microservices.studentexam.models")
 public class StudentsExamsServerApplication {
 
 	public static void main(String[] args) {

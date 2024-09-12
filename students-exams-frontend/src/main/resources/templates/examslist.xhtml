@@ -6,11 +6,8 @@
 		<td th:text="${exam.id}"></td>
 		<td th:text="${exam.text}"></td>
 		<td th:text="${exam.subject}"></td>
-		<!-- <td><a th:href="@{seeexams(name = ${student.name})}">
-			see	exams</a>
-		</td> -->
 	</tr>
 </table>
 
-<a th:href="@{/examform(name=${name})}">new</a>
+<a th:href="@{/examform(name=${name})}">New exam</a>
 </html>

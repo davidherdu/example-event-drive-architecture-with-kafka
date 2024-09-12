@@ -5,9 +5,6 @@
 	<tr th:each="student : ${studentslist}">
 		<td th:text="${student.name}"></td>
 		<td th:text="${student.age}"></td>
-		<!-- <td><a th:href="@{seeexams(name = ${student.name})}">
-			see	exams</a>
-		</td> -->
 	</tr>
 </table>
 

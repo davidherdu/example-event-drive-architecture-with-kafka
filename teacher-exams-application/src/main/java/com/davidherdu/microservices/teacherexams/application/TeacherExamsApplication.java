@@ -7,6 +7,7 @@ import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
 import org.springframework.kafka.core.ConsumerFactory;
@@ -16,6 +17,7 @@ import org.springframework.kafka.support.serializer.JsonDeserializer;
 import com.davidherdu.microservices.distributed.dtos.ExamDto;
 
 @SpringBootApplication
+@EntityScan(basePackages = "com.davidherdu.microservices.distributed.models")
 public class TeacherExamsApplication {
 
 	public static void main(String[] args) {
@@ -31,7 +33,7 @@ public class TeacherExamsApplication {
         props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, JsonDeserializer.class);
         
         JsonDeserializer<ExamDto> deserializer = new JsonDeserializer<ExamDto>(ExamDto.class);
-        deserializer.addTrustedPackages("com.davidherdu.microservices.web3.dtos");
+        deserializer.addTrustedPackages("com.davidherdu.microservices.distributed.dtos");
         
         return new DefaultKafkaConsumerFactory<>(props, new StringDeserializer(), deserializer);
     }

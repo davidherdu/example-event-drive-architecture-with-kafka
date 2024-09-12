@@ -3,11 +3,8 @@ package com.davidherdu.microservices.studentsexams.server.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationEventPublisher;
-import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
 import com.davidherdu.microservices.distributed.dtos.ExamDto;
 import com.davidherdu.microservices.studentexam.models.Exam;
@@ -19,15 +16,6 @@ import com.davidherdu.microservices.studentsexams.server.repositories.StudentRep
 @Service
 public class StudentExamService {
 
-	@Value("${web3.server}")
-	String server;
-	
-	@Autowired
-	RestTemplate restTemplate;
-	
-	@Autowired
-	private KafkaTemplate<String, ExamDto> kafkaTemplate;
-	
 	@Autowired
 	private ApplicationEventPublisher publisherEvents;
 	
@@ -65,8 +53,6 @@ public class StudentExamService {
 		other.setSubject(exam.getSubject());
 		
 		publisherEvents.publishEvent(new InsertExamEvent(other));
-		//restTemplate.postForEntity(server + "/exams", other, ExamDto.class);
-		//kafkaTemplate.send("exam-events", other);
 	}
 
 	public Student findOneStudent(String name) {

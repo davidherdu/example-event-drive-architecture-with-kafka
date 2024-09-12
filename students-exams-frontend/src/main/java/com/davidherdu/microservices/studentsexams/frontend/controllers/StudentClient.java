@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import com.davidherdu.microservices.studentexam.dto.ExamDto;
 import com.davidherdu.microservices.studentexam.dto.StudentDto;
 
-@FeignClient(name="web", path="/webapi/students")
+@FeignClient(name="${studentsexamsserver.service.name}", path="/webapi/students")
 public interface StudentClient {
 
 	@GetMapping
