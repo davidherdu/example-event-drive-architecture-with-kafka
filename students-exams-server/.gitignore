@@ -1,75 +1,33 @@
-# Java class files
-*.class
-
-# Log files
-*.log
-
-# Compiled binary files
-*.jar
-*.war
-*.ear
-
-# Java dependency directories
-/.m2/
-*.iml
-
-# Eclipse specific files
-.classpath
-.project
-.settings/
-
-# IntelliJ IDEA specific files
-.idea/
-*.iml
-*.iws
-out/
-
-# NetBeans specific files
-nbproject/private/
-build/
-nbbuild/
-dist/
-.nb-gradle/
-
-# Gradle specific files
-.gradle/
-build/
-!gradle/wrapper/gradle-wrapper.jar
-
-# Maven specific files
+HELP.md
 target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
 
-# MacOS specific files
-.DS_Store
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
 
-# Windows specific files
-Thumbs.db
-ehthumbs.db
-
-# User-specific files
-*.swp
-*.swo
-*.sublime-project
-*.sublime-workspace
-
-# Temporary files
-*.tmp
-*.bak
-*.swp
-
-# IntelliJ IDEA workspace files
-*.idea/
-*.iml
+### IntelliJ IDEA ###
+.idea
 *.iws
+*.iml
+*.ipr
 
-# VS Code specific files
-.vscode/
-
-# SonarQube specific files
-.sonar/
-
-# JRebel specific files
-.jrebel/
-
-# Build directories
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
 build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
