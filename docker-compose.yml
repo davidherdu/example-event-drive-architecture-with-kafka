@@ -8,6 +8,8 @@ services:
       ZOOKEEPER_TICK_TIME: 2000
     ports:
       - 2181:2181
+    networks:
+      - my-network
 
   kafka:
     image: confluentinc/cp-kafka:7.0.1
@@ -20,36 +22,55 @@ services:
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+    networks:
+      - my-network
 
   eureka:
     build:
       context: ./eureka
+      dockerfile: Dockerfile
     ports:
       - "8761:8761"
+    networks:
+      - my-network
 
   students-exams-server:
     build:
       context: ./students-exams-server
+      dockerfile: Dockerfile
     ports:
       - "8081:8081"
     depends_on:
       - kafka
       - eureka
+    networks:
+      - my-network
 
   students-exams-frontend:
     build:
       context: ./students-exams-frontend
+      dockerfile: Dockerfile
     ports:
       - "8082:8082"
     depends_on:
       - students-exams-server
       - eureka
+    networks:
+      - my-network
 
   teacher-exams-application:
     build:
       context: ./teacher-exams-application
+      dockerfile: Dockerfile
     ports:
       - "8083:8083"
     depends_on:
       - kafka
       - eureka
+    networks:
+      - my-network
+
+# Define the custom network
+networks:
+  my-network:
+    driver: bridge

@@ -1,26 +1,16 @@
-# Stage 1: Build the Eureka Server
-FROM maven:3.8.4-openjdk-17 AS builder
-
-WORKDIR /app
-
-# Copy the Maven POM file and install dependencies
-COPY pom.xml .
-RUN mvn dependency:go-offline
-
-# Copy the rest of the source code and build the application
-COPY src ./src
-RUN mvn clean package -DskipTests
-
-# Stage 2: Run the Eureka Server
+# Stage 1: Run the Eureka Server
 FROM openjdk:17-jdk-slim
 
 WORKDIR /app
 
-# Copy the built JAR file from the builder stage
-COPY --from=builder /app/target/eureka-0.0.1-SNAPSHOT.jar /app/eureka.jar
+# Copy the locally built JAR file into the Docker container
+COPY target/eureka-0.0.1-SNAPSHOT.jar /app/eureka.jar
+
+# Copy the application.properties file into the container
+COPY src/main/resources/application.properties /app/config/application.properties
 
 # Expose the Eureka server default port
 EXPOSE 8761
 
 # Run the Eureka server
-ENTRYPOINT ["java", "-jar", "/app/eureka.jar"]
+ENTRYPOINT ["java", "-jar", "/app/eureka.jar", "--spring.config.location=file:/app/config/application.properties"]
