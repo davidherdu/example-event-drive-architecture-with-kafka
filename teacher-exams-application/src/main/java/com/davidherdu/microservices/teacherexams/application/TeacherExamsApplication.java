@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -20,6 +21,9 @@ import com.davidherdu.microservices.distributed.dtos.ExamDto;
 @EntityScan(basePackages = "com.davidherdu.microservices.distributed.models")
 public class TeacherExamsApplication {
 
+	@Value("${kafka.bootstrap-servers}") 
+	private String bootstrapServers;
+
 	public static void main(String[] args) {
 		SpringApplication.run(TeacherExamsApplication.class, args);
 	}
@@ -27,7 +31,7 @@ public class TeacherExamsApplication {
 	@Bean
     public ConsumerFactory<String, ExamDto> consumerFactory() {
         Map<String, Object> props = new HashMap<>();
-        props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
+        props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
         props.put(ConsumerConfig.GROUP_ID_CONFIG, "group1");
         props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
         props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, JsonDeserializer.class);

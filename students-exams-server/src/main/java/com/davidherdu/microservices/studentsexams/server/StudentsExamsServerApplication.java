@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -22,10 +23,13 @@ import com.davidherdu.microservices.distributed.dtos.ExamDto;
 @EntityScan(basePackages = "com.davidherdu.microservices.studentexam.models")
 public class StudentsExamsServerApplication {
 
+	@Value("${kafka.bootstrap-servers}") 
+	private String bootstrapServers;
+	
 	public static void main(String[] args) {
 		SpringApplication.run(StudentsExamsServerApplication.class, args);
 	}
-
+	
 	@Bean
 	@LoadBalanced
 	public RestTemplate restTemplate() {
@@ -35,7 +39,7 @@ public class StudentsExamsServerApplication {
 	@Bean
     public ProducerFactory<String, ExamDto> producerFactory() {
         Map<String, Object> configProps = new HashMap<>();
-        configProps.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
+        configProps.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
         configProps.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
         configProps.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, JsonSerializer.class);
         return new DefaultKafkaProducerFactory<>(configProps);
