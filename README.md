@@ -42,14 +42,6 @@ This repository demonstrates a sample event-driven architecture using Kafka with
 
 ## Getting Started
 
-### Prerequisites
-- Java 11 or higher
-- Maven 3.6 or higher
-- Apache Kafka (running locally or in a Docker container)
-- H2 Database
-
-### Setup and Configuration
-
 ### 1. **Clone the Repository**
 
    ```bash
@@ -102,7 +94,7 @@ This repository demonstrates a sample event-driven architecture using Kafka with
 
 
 ### 4. **Verify the Setup**
-- **Eureka Dashboard:** Go to http://localhost:8761/ to view the Eureka server and verify that all microservices are correctly registered.
+- **Eureka Dashboard:** Go to http://localhost:8761 to view the Eureka server and verify that all microservices are correctly registered.
 - **Microservice Endpoints:**
    - Visit http://localhost:8082/studentslist to interact with the students-exams-frontend service.
    - Visit http://localhost:8083/examslist to interact with the teacher-exams-application service.
